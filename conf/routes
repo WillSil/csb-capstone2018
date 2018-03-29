@@ -1,0 +1,77 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Main
+GET            /                                              controllers.MainController.index
+GET            /index                                         controllers.MainController.index
+
+OPTIONS        /                                              controllers.MainController.options(url = null)
+OPTIONS        /*url                                          controllers.MainController.options(url: String)
+
+# User
+POST           /user/login                                    controllers.UserController.login
+POST           /user/logout                                   controllers.UserController.logout
+
+# User Settings
+GET            /userSettings                                  controllers.UserSettingsController.getSettings
+POST           /userSettings/syncFrequency                    controllers.UserSettingsController.updateSyncFrequency()
+
+# User Roles
+GET            /userRoles                                     controllers.UserRolesController.getUserRoles
+POST           /userRoles/revoke                              controllers.UserRolesController.revokeUserRole()
+POST           /userRoles/add                                 controllers.UserRolesController.addUserRole()
+
+# Businesses
+GET            /businesses                                    controllers.BusinessController.getBusinesses
+GET            /businesses/:businessId                        controllers.BusinessController.getBusinessDetails(businessId: Int)
+POST           /businesses/create                             controllers.BusinessController.createBusiness()
+POST           /businesses/edit/:businessId                   controllers.BusinessController.editBusiness(businessId: Int)
+POST           /businesses/delete/:businessId                 controllers.BusinessController.deleteBusiness(businessId: Int)
+
+# Client
+GET            /clients/:businessId                           controllers.ClientController.getClientsForBusiness(businessId: Int)
+POST           /clients/create/:businessId                    controllers.ClientController.createClient(businessId: Int)
+POST           /clients/edit/:businessId/:clientId            controllers.ClientController.updateClient(businessId: Int, clientId: Int)
+POST           /clients/delete/:businessId/:clientId          controllers.ClientController.deleteClient(businessId: Int, clientId: Int)
+
+# Contact Statuses
+GET            /contactStatuses                               controllers.ContactStatusController.getContactStatuses
+
+# Homepage
+GET            /dailyDigest/admin                             controllers.HomepageController.getDailyDigestForAdmin
+
+# Notifications
+GET            /notifications                                 controllers.NotificationController.getNotifications
+GET            /notifications/count                           controllers.NotificationController.getNotificationsCount
+POST           /notifications/create                          controllers.NotificationController.createNotification()
+POST           /notifications/edit/:notificationId            controllers.NotificationController.updateNotification(notificationId: Int)
+POST           /notifications/delete/:notificationId          controllers.NotificationController.deleteNotification(notificationId: Int)
+
+# Files
+GET            /files/download/:fileId                        controllers.FilesController.downloadFile(fileId: String)
+POST           /files/upload                                  controllers.FilesController.uploadFile()
+
+# Auto Sync
+GET            /emailSyncs                                    controllers.SyncsController.getEmailSyncs
+
+# Engagements
+GET            /engagements                                   controllers.EngagementController.getEngagements
+GET            /engagements/:engagementId                     controllers.EngagementController.getEngagementDetails(engagementId: Int)
+POST           /engagements/create/:businessId                controllers.EngagementController.createEngagement(businessId: Int)
+POST           /engagements/edit/:engagementId                controllers.EngagementController.updateEngagement(engagementId: Int)
+POST           /engagements/delete/:engagementId              controllers.EngagementController.deleteEngagement(engagementId: Int)
+POST           /engagements/updateStatus/:engagementId        controllers.EngagementController.updateEngagementStatus(engagementId: Int)
+
+# Admin, for initial setup only
+POST           /admin/google/setup                            controllers.AdminController.signInAdminWithGoogle
+
+# Docs
+GET            /api-docs.json                                 controllers.ApiHelpController.getResources
+GET            /docs                                          controllers.MainController.docs
+
+# Map static resources from the /public folder to the /assets URL path
+#GET         /assets/*file                                  controllers.Assets.versioned(path = "/public", file: Asset)
+GET            /assets/*file                                  controllers.MainController.getResource(file: Asset)
+
+    

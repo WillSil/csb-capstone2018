@@ -1,0 +1,39 @@
+<configuration debug="true">
+
+    <conversionRule conversionWord="coloredLevel" converterClass="play.api.libs.logback.ColoredLevel"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%coloredLevel %logger{15} - %message%n%xException{10}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="play" level="DEBUG"/>
+
+    <logger name="application" level="DEBUG"/>
+
+    <logger name="actions" level="DEBUG"/>
+
+    <logger name="cache" level="DEBUG"/>
+
+    <logger name="clients" level="DEBUG"/>
+
+    <logger name="controllers" level="DEBUG"/>
+
+    <logger name="global" level="DEBUG"/>
+
+    <logger name="models" level="DEBUG"/>
+
+    <logger name="repositories" level="DEBUG"/>
+
+    <logger name="utilities" level="DEBUG"/>
+
+    <logger name="views" level="DEBUG"/>
+
+    <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF"/>
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
