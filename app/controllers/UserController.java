@@ -24,6 +24,7 @@ import java.util.concurrent.*;
 /**
  * Created by Corey Caplan on 5/3/17.
  */
+/*
 @Api(value = "User")
 public class UserController extends BaseController {
 
@@ -162,3 +163,4 @@ public class UserController extends BaseController {
     }
 
 }
+*/
