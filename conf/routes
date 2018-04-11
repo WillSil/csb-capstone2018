@@ -10,7 +10,7 @@ OPTIONS        /                                              controllers.MainCo
 OPTIONS        /*url                                          controllers.MainController.options(url: String)
 
 # User
-POST           /user/login                                    controllers.UserController.login
+POST           /user/loginnot                                    controllers.UserController.login
 POST           /user/logout                                   controllers.UserController.logout
 
 # User Settings

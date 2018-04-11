@@ -63,11 +63,13 @@ public class AdminInitialization {
     }
 
     AdminInitialization() throws Exception {
+
         httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         factory = JacksonFactory.getDefaultInstance();
 
 
         authorizationCodeInstalledApp = createAuthorizationInstalledApp();
+
     }
 
     Credential getCredential() throws Exception {
