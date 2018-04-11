@@ -1,4 +1,4 @@
-# Automate CSB (SERVER) I am adding stuff
+# Automate CSB (SERVER) I am adding stuff pt 2
 
 ### Project Setup
 - You will need <a href="https://www.jetbrains.com/idea/">Intellij Ultimate edition</a> as your IDE
