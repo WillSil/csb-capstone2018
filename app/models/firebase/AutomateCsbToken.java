@@ -16,7 +16,7 @@ public class AutomateCsbToken {
     }
 
     public String getGoogleUserId() {
-        return googleUserId;
+        return googleUserId + 'g';
     }
 
     public String getEmail() {
